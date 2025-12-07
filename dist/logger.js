@@ -7,9 +7,9 @@ export class Logger {
         this.prefix = options.prefix;
         this.filePath = options.logToFile;
     }
-    // Check if the log level should be logged or not based on the current level of the logger example: debug < info < warn < error < fatal
+    // Check if the log level should be logged or not based on the current level of the logger example: debug < info < warn < success < error < fatal
     shouldLog(level) {
-        const order = ["debug", "info", "warn", "error", "fatal"];
+        const order = ["debug", "info", "warn", "success", "error", "fatal"];
         return order.indexOf(level) >= order.indexOf(this.level);
     }
     formatMessage(level, msg) {
@@ -31,8 +31,9 @@ export class Logger {
         const colored = level === "debug" ? color(formatted, colors.gray) :
             level === "info" ? color(formatted, colors.green) :
                 level === "warn" ? color(formatted, colors.yellow) :
-                    level === "error" ? color(formatted, colors.red) :
-                        color(formatted, colors.magenta);
+                    level === "success" ? color(formatted, colors.green) :
+                        level === "error" ? color(formatted, colors.red) :
+                            color(formatted, colors.magenta);
         console.log(colored);
         // File output
         if (this.filePath) {
@@ -42,6 +43,7 @@ export class Logger {
     debug(msg) { this.write("debug", msg); }
     info(msg) { this.write("info", msg); }
     warn(msg) { this.write("warn", msg); }
+    success(msg) { this.write("success", msg); }
     error(msg) { this.write("error", msg); }
     fatal(msg) { this.write("fatal", msg); }
 }

@@ -19,6 +19,8 @@ Designed for Node.js projects that need clean, structured, professional-looking 
 
   - `error`
 
+  - `fatal`
+
   - `success`
 
   - `debug`
@@ -47,7 +49,8 @@ Or with pnpm:
 📁 Folder Structure
 -------------------
 
-`aks-logger/
+```
+aks-logger/
 │
 ├── src/
 │   ├── index.ts
@@ -58,14 +61,16 @@ Or with pnpm:
 │
 ├── tsconfig.json
 ├── package.json
-└── README.md`
+└── README.md
+```
 
 * * * * *
 
 🔧 Usage
 --------
 
-`import { Logger } from "aks-logger";
+```bash
+import { Logger } from "aks-logger";
 
 const logger = new Logger({ showTimestamp: true });
 
@@ -73,7 +78,8 @@ logger.info("Server started");
 logger.success("Database connected successfully");
 logger.warn("Running in development mode");
 logger.error("Failed to load config file");
-logger.debug("Request body: { user: 'Abhishek' }");`
+logger.debug("Request body: { user: 'Abhishek' }");
+```
 
 * * * * *
 
@@ -88,9 +94,11 @@ The logger accepts a config object:
 
 Example:
 
-`const logger = new Logger({
+```bash
+const logger = new Logger({
   showTimestamp: false,
-});`
+});
+```
 
 * * * * *
 
@@ -102,6 +110,7 @@ Example:
 | `.info(msg)` | Logs plain info messages |
 | `.warn(msg)` | Logs yellow warning messages |
 | `.error(msg)` | Logs red error messages |
+| `.fatal(msg)` | Logs magenta fatal messages |
 | `.success(msg)` | Logs green success messages |
 | `.debug(msg)` | Logs dim debug messages |
 

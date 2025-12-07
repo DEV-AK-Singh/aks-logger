@@ -1,6 +1,6 @@
 {
   "name": "aks-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple and powerful TypeScript logger with colors and file output.",
   "type": "module",
   "main": "dist/index.js",
