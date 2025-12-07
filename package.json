@@ -1,0 +1,24 @@
+{
+  "name": "aks-logger",
+  "version": "1.0.0",
+  "description": "A simple and powerful TypeScript logger with colors and file output.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "logger",
+    "typescript",
+    "log",
+    "cli",
+    "colors"
+  ],
+  "author": "Abhishek Singh",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
+}
